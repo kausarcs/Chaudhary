@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kausar Ali Chaudhary</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+body{
+    background:#f3f4f7;
+    color:#111827;
+}
+
+/* NAVBAR */
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+}
+
+body{
+    padding-top: 30px;
+}
+.nav-container{
+    max-width:1400px;
+    margin:auto;
+    padding:5px 10px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.nav-links{
+    display:flex;
+    gap:35px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#111827;
+    font-weight:500;
+}
+
+.menu-container{
+    position:absolute;
+    right:20px;          /* always on far right */
+    top:10%;
+}
+
+.menu-btn{
+    background:none;
+    border:none;
+    font-size:28px;
+    cursor:pointer;
+    color:#111827;
+    padding:5px 10px;
+}
+
+.dropdown-menu{
+    display:none;
+    position:absolute;
+    right:0;
+    top:45px;
+
+    min-width:180px;
+
+    background:white;
+    border-radius:10px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.15);
+
+    overflow:hidden;
+    z-index:1000;
+}
+
+.dropdown-menu a{
+    display:block;
+    padding:12px 18px;
+    color:#111827;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.dropdown-menu a:hover{
+    background:#f3f4f6;
+}
+
+.dropdown-menu.show{
+    display:block;
+}
+/* HERO */
+
+.hero{
+    max-width:1400px;
+    margin:auto;
+    padding:40px 60px;
+}
+
+.hero-wrapper{
+    display:flex;
+    gap:40px;
+    align-items:flex-start;
+}
+
+.affiliation-row{
+    display:flex;
+    align-items:center;
+    gap:5px;
+    margin-top:8px;
+    margin-bottom:15px;
+}
+
+.affiliation-row h5{
+    margin:0;
+    font-size:16px;
+    font-weight:500;
+}
+
+.affiliation-logo{
+    width:25px;
+    height:auto;
+    object-fit:contain;
+}
+/* PHOTO */
+
+.profile-img{
+    width:320px;
+    height:450px;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+}
+
+.profile-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* CONTENT */
+
+.hero-content{
+    flex:1;
+}
+
+.hero-content h1{
+    font-size:32px;
+    font-weight:800;
+    line-height:1;
+    color:#07113b;
+}
+
+.hero-content h2{
+    margin-top:10px;
+    font-size:18px;
+    font-weight:700;
+}
+
+.hero-content p{
+    margin-top:18px;
+    max-width:700px;
+    line-height:1.5;
+    font-size:16px;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:25px;
+    background:#2f6db8;
+    color:white;
+    padding:10px 25px;
+    border-radius:40px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+}
+
+.university{
+    margin-top:10px;
+    font-weight:700;
+    color:#07113b;
+    font-size:20px;
+}
+
+/* RESEARCH */
+
+.section-title{
+    margin-top:20px;
+    margin-bottom:10px;
+    font-size:28px;
+    font-weight:600;
+}
+
+.research-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.research-card{
+    background:white;
+    border-radius:12px;
+    padding:10px;
+    text-align:center;
+    box-shadow:0 3px 15px rgba(0,0,0,.08);
+}
+
+.research-card img{
+    width:100%;
+    max-height:100px;
+    object-fit:contain;
+}
+
+.research-card h3{
+    margin-top:5px;
+    font-size:12px;
+    font-weight:700;
+}
+
+/* PUBLICATIONS */
+
+.publications{
+    margin-top:50px;
+}
+
+.pub-title{
+    font-size:28px;
+    font-weight:600;
+    margin-bottom:17px;
+}
+
+.pub-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 0;
+    border-top:1px solid #d9dde5;
+}
+
+.pub-left{
+    font-size:22px;
+    font-weight:700;
+}
+
+.pub-left span{
+    color:#555;
+    font-weight:500;
+}
+
+.pub-right{
+    display:flex;
+    gap:15px;
+}
+
+.pub-right a{
+    text-decoration:none;
+    color:#2f6db8;
+    font-weight:600;
+}
+
+@media(max-width:1100px){
+
+.hero-wrapper{
+    flex-direction:column;
+}
+
+.profile-img{
+    width:100%;
+    max-width:350px;
+}
+
+.hero-content h1{
+    font-size:48px;
+}
+
+.research-grid{
+    grid-template-columns:1fr;
+}
+
+.pub-item{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:15px;
+}
+
+}
+
+
+    /* About Section */
+    .about {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #d7eff6, #edfcfc, #89c0f6);
+    color: black;
+    display: flex;
+    align-items: center;
+    padding: 5px 5%;
+    border-radius: 12px;
+    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.05);
+    }
+    .about-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        max-width: 1400px;
+        margin: auto;
+        gap: 50px;
+    }
+    .about-image {
+        flex: 1 1 45%;
+    }
+    .about-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        object-fit: cover;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .about-text {
+        flex: 1 1 50%;
+    }
+    .about-text small {
+        font-size: 0.85em;
+        color: gray;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    .about-text h2 {
+        font-size: 2.5em;
+        margin: 15px 0;
+    }
+    .about-text h2 em {
+        font-style: italic;
+    }
+    .about-text p {
+        font-size: 1.1em;
+        line-height: 1.6;
+        margin-bottom: 30px;
+        color: #333;
+    }
+    .about-stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+    }
+    .about-stats strong {
+        font-size: 1.5em;
+        display: block;
+        margin-bottom: 5px;
+    }
+    .about-stats span {
+        font-size: 0.85em;
+        color: gray;
+    }
+    /* Contact Section */
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px;
+  flex-wrap: nowrap; /* keep horizontal */
+  max-width: 1100px;
+  margin: 0 auto;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.contact-card {
+  background: rgba(255, 255, 255, 0.15); /* softer transparency */
+  flex: 0 0 280px; /* smaller size */
+  padding: 18px;
+  border-radius: 10px;
+  backdrop-filter: blur(8px); /* stronger glass effect */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.contact-card .icon {
+  font-size: 1.8em;
+  margin-bottom: 8px;
+  color: #2a9df4;
+}
+
+.contact-card h3 {
+  font-size: 1.15em;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.contact-card p {
+  font-size: 0.9em;
+  color: #f1f1f1;
+  margin-bottom: 10px;
+  line-height: 1.4em;
+}
+
+.contact-card a,
+.contact-card span {
+  display: block;
+  color: #d0eaff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.contact-card a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+    /* Portfolio Intro Section */
+.portfolio-card{
+    background: #ffffffda;
+    padding: 12px 20px;
+    border-radius: 12px;
+    width: 95%;
+    max-width: 1500px;
+    margin: 10px auto;
+    backdrop-filter: blur(12px);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.paper-title{
+    margin: 0;
+    color: hsla(0, 0%, 4%, 0.97);
+    font-size: 18px;
+    font-weight: 600;
+    flex: 1;
+}
+
+.paper-links{
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.paper-links a{
+    text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    background: #61b9f489;
+    color: #111;
+    font-size: 12px;
+    font-weight: 600;
+    transition: 0.4s;
+}
+
+.paper-links a:hover{
+    background: #ffb870;
+    transform: translateY(-2px);
+}
+    /* Contact Section */
+    .contact {
+        background-color: #1d1d1d;
+        padding: 50px 20px;
+        text-align: center;
+    }
+    .contact h2 {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+    .contact p {
+        margin: 8px 0;
+        font-size: 1.1em;
+        color: #ccc;
+    }
+    .contact a {
+        color: #f4a261;
+        text-decoration: none;
+    }
+    .contact a:hover {
+        text-decoration: underline;
+    }
+    
+    /* Responsive */
+    @media (max-width: 1024px) {
+        .about-stats {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    @media (max-width: 768px) {
+        .about-container {
+            flex-direction: column;
+            text-align: center;
+        }
+        .about-text {
+            order: 2;
+        }
+        .about-image {
+            order: 1;
+        }
+        .about-stats {
+            text-align: center;
+        }
+    }
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+body{
+    background:#f7f9fc;
+    color:#1f2937;
+}
+
+/* Header */
+
+.header{
+    text-align:center;
+    padding:10px 10px 0px;
+}
+
+.header h1{
+    font-size:2rem;
+    font-weight:700;
+    color:#0f172a;
+}
+
+.header p{
+    margin-top:5px;
+    font-size:1rem;
+    color:#64748b;
+}
+
+/* Awards Section */
+
+.awards-container{
+    width:95%;
+    max-width:1500px;
+    margin:0 auto 80px;
+}
+
+.award-card{
+    background:white;
+    padding:10px 15px;
+    border-radius:15px;
+    margin-bottom:5px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+    transition:0.2s ease;
+}
+
+.award-card:hover{
+    transform:translateY(-4px);
+}
+
+.award-content{
+    flex:1;
+}
+
+.award-title{
+    font-size:1.3rem;
+    font-weight:700;
+    color:#1e40af;
+    margin-bottom:8px;
+}
+
+.award-desc{
+    color:#4b5563;
+    line-height:1.6;
+}
+
+.award-year{
+    background:#dbeafe;
+    color:#1d4ed8;
+    padding:10px 18px;
+    border-radius:30px;
+    font-weight:700;
+    min-width:90px;
+    text-align:center;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .award-card{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .award-year{
+        align-self:flex-start;
+    }
+
+    .header h1{
+        font-size:2.2rem;
+    }
+}
+
+
+
+</style>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+<script>
+
+function toggleMenu() {
+    document.getElementById("dropdownMenu")
+            .classList.toggle("show");
+}
+
+window.onclick = function(event) {
+
+    if (!event.target.matches('.menu-btn')) {
+
+        var dropdown =
+            document.getElementById("dropdownMenu");
+
+        if (dropdown.classList.contains('show')) {
+            dropdown.classList.remove('show');
+        }
+    }
+}
+
+</script>
+
+
+
+
+
+<body>
+
+<nav>
+    <div class="nav-container">
+
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#about">About</a>
+            <a href="#research">Research</a>
+            <a href="#our-work">Publications</a>
+            <a href="#">Lab</a>
+            <a href="#awards">Awards & Honors</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <div class="menu-container">
+
+            <button class="menu-btn" onclick="toggleMenu()">
+                ☰
+            </button>
+
+            <div class="dropdown-menu" id="dropdownMenu">
+                <a href="#">Projects</a>
+                <a href="teaching.html">Teaching</a>
+                <a href="#">Students</a>
+                <a href="Gallery.html">Gallery</a>
+                <a href="CV.PDF" download="CV.PDF">CV</a>
+            </div>
+
+        </div>
+
+    </div>
+</nav>
+
+<section class="hero">
+
+    <div class="hero-wrapper">
+
+        <div class="profile-img">
+            <img src="/Users/kausarali/Downloads/Project1/Kausar.png" alt="">
+        </div>
+
+        <div class="hero-content">
+
+            <h1>Mr. Kausar Ali</h1>
+
+            <h2>Researcher in Artificial Intelligence</h2>
+
+            <div class="affiliation-row">
+                <h5>
+                    Department of Computer Science, Aligarh Muslim University, Aligarh, India
+                </h5>
+
+                <img src="amu_logo.png" alt="AMU Logo" class="affiliation-logo">
+            </div>
+            <p>
+                Dedicated to fundamental advances in neural architecture and
+                machine learning optimization, and their application to complex
+                environmental and health monitoring systems.
+            </p>
+
+            <a href="#our-work" class="btn">View Publications</a>
+
+
+            <div class="section-title">
+                CORE RESEARCH AREAS
+            </div>
+
+            <div class="research-grid">
+
+                <div class="research-card">
+                    <img src="Neural.png">
+                    <h3>NEURAL NETWORKS OPTIMIZATION</h3>
+                </div>
+
+                <div class="research-card">
+                    <img src="vocal.png">
+                    <h3>ACOUSTIC DEEP LEARNING</h3>
+                </div>
+
+                <div class="research-card">
+                    <img src="RNNs.png">
+                    <h3>RANDOMIZED NEURAL NETWORKS</h3>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="publications">
+
+        <div class="pub-title">
+            RECENT PUBLICATIONS
+        </div>
+
+        <div class="pub-item">
+
+            <div class="pub-left">
+                1. Intuitionistic Fuzzy and Robust Loss Fused Framework for Stable and Efficient RVFL Learning.
+                <span>(TFS 2026)</span>
+            </div>
+
+            <div class="pub-right">
+                <a href="#">VIEW</a>
+                <a href="#">CODE</a>
+                <a href="#">BIBTEX</a>
+            </div>
+
+        </div>
+
+        <div class="pub-item">
+
+            <div class="pub-left">
+                2. Federated Learning: A Novel Framework for Parkinson’s Disease Detection.
+                <span>(IEEE ICECI 2026)</span>
+            </div>
+
+            <div class="pub-right">
+                <a href="https://ieeexplore.ieee.org/document/11519405">VIEW</a>
+                <a href="#">CODE</a>
+                <a href="#">BIBTEX</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Portfolio Items -->
+<section class="portfolio-items" id="our-work" style="background: linear-gradient(135deg, #111 0%, #1a1a1a 100%); color: white; padding: 20px 0; display: flex; flex-direction: column; gap: 5px; align-items: center; width: 100%;">
+<h2>Our <em>Publications</em></h2>
+    <!-- Publication 1 -->
+<div class="portfolio-card animate-on-scroll" data-delay="0">
+
+    <h3 class="paper-title">
+        Intuitionistic Fuzzy and Robust Loss Fused Framework for Stable and Efficient RVFL Learning.
+        <span>(TFS 2026)</span>
+    </h3>
+
+    <div class="paper-links">
+        <a href="" target="_blank">VIEW</a>
+        <a href="#">CODE</a>
+        <a href="#">BIBTEX</a>
+    </div>
+
+</div>
+    <!-- Publication 1 -->
+<div class="portfolio-card animate-on-scroll" data-delay="0">
+
+    <h3 class="paper-title">
+        Federated Learning: A Novel Framework for Parkinson’s Disease Detection
+    </h3>
+
+    <div class="paper-links">
+        <a href="https://ieeexplore.ieee.org/document/11519405" target="_blank">VIEW</a>
+        <a href="#">CODE</a>
+        <a href="#">BIBTEX</a>
+    </div>
+
+</div>
+
+<!-- Publication 2 -->
+<div class="portfolio-card animate-on-scroll" data-delay="0.2">
+
+    <h3 class="paper-title">
+        Comparative Study of Federated Learning and Machine Learning for Drug Discovery
+    </h3>
+
+    <div class="paper-links">
+        <a href="https://ieeexplore.ieee.org/document/10781631" target="_blank">VIEW</a>
+        <a href="#">CODE</a>
+        <a href="#">BIBTEX</a>
+    </div>
+
+</div>
+
+   <!-- Publication 3 -->
+<div class="portfolio-card animate-on-scroll" data-delay="0.4">
+
+    <h3 class="paper-title">
+        JK Algorithm: A Novel Approach for Single Nucleotide Polymorphism Detection of Breast Cancer Causing Genes
+    </h3>
+
+    <div class="paper-links">
+        <a href="https://ieeexplore.ieee.org/document/11265687" target="_blank">VIEW</a>
+        <a href="#">CODE</a>
+        <a href="#">BIBTEX</a>
+    </div>
+
+</div>
+
+<!-- Publication 4 -->
+<div class="portfolio-card animate-on-scroll" data-delay="0.6">
+
+    <h3 class="paper-title">
+        Empirical Evaluation of Self and Cross-Model Verification for LLM Hallucination Detection in Cybersecurity
+    </h3>
+
+    <div class="paper-links">
+        <a href="https://ieeexplore.ieee.org/document/11519426" target="_blank">VIEW</a>
+        <a href="#">CODE</a>
+        <a href="#">BIBTEX</a>
+    </div>
+
+</div>
+
+<!-- Publication 5 -->
+<div class="portfolio-card animate-on-scroll" data-delay="0.8">
+
+    <h3 class="paper-title">
+        An Experimental Study of Soft Computing Techniques for Physiological Pattern Detection
+    </h3>
+
+    <div class="paper-links">
+        <a href="https://ieeexplore.ieee.org/document/11519472" target="_blank">VIEW</a>
+        <a href="#">CODE</a>
+        <a href="#">BIBTEX</a>
+    </div>
+
+</div>
+
+</section>
+
+<style>
+    .portfolio-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 12px 25px rgba(138, 33, 33, 0.4);
+    }
+
+    @media (max-width: 768px) {
+        .portfolio-card {
+            width: 95%;
+            padding: 25px 30px;
+        }
+    }
+
+    /* Scroll Animation */
+    .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    .animate-on-scroll.visible {
+        opacity: 1;
+        transform: translateY(0);
+        transition: all 0.8s ease-out;
+    }
+</style>
+
+<script>
+    const scrollElements = document.querySelectorAll(".animate-on-scroll");
+
+    const elementInView = (el, offset = 100) => {
+        const elementTop = el.getBoundingClientRect().top;
+        return elementTop <= (window.innerHeight || document.documentElement.clientHeight) - offset;
+    };
+
+    const displayScrollElement = (element, delay = 0) => {
+        setTimeout(() => {
+            element.classList.add("visible");
+        }, delay);
+    };
+
+    const hideScrollElement = (element) => {
+        element.classList.remove("visible");
+    };
+
+    const handleScrollAnimation = () => {
+        scrollElements.forEach((el) => {
+            const delay = parseFloat(el.getAttribute('data-delay')) * 1000 || 0;
+            if (elementInView(el, 150)) {
+                displayScrollElement(el, delay);
+            } else {
+                hideScrollElement(el);
+            }
+        });
+    };
+
+    window.addEventListener("scroll", handleScrollAnimation);
+    handleScrollAnimation(); // initial check
+</script>
+
+</section>
+
+
+
+<!-- Ongoing Work Section -->
+<section class="ongoing-work" id ="research"style="background: #111; color: white; padding: 30px 5%; width: 100%;">
+    <h2 style="text-align: center; font-size: 2em; margin-bottom: 20px;">Future <em>Research</em></h2>
+
+    <div class="projects-row" style="display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; align-items: stretch;">
+
+        <!-- Project 1 -->
+        <div class="project-container" style="flex: 1 1 300px; max-width: 320px; background: #1a1a1a; padding: 20px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.4); transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; text-align: center; display: flex; flex-direction: column; justify-content: space-between;">
+            <img src="/Users/kausarali/Downloads/Project1/FutureWork/poultrypng.png" alt="FL-VetTrans Project" style="width: 100%; border-radius: 12px; object-fit: cover; margin-bottom: 15px; transition: transform 0.3s;">
+            <div>
+                <h3 style="font-size: 1.3em; color: #f4a261; margin-bottom: 10px;">FL-VetTrans</h3>
+                <p style="line-height: 1.6; margin-bottom: 10px;">
+                    Translating animal vocalizations and behavior into actionable clinical insights while preserving privacy across veterinary institutions.
+                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 5px; justify-content: center; margin-bottom: 10px;">
+                    <span style="background: rgba(255,255,255,0.1); padding: 3px 8px; border-radius: 5px; font-size: 0.8em;">Federated Learning</span>
+                    <span style="background: rgba(255,255,255,0.1); padding: 3px 8px; border-radius: 5px; font-size: 0.8em;">Animal Behavior</span>
+                    <span style="background: rgba(255,255,255,0.1); padding: 3px 8px; border-radius: 5px; font-size: 0.8em;">Privacy-Preserving</span>
+                </div>
+            </div>
+            <a href="#" style="color: #f20808; font-weight: 600; text-decoration: none; margin-top: 10px; display: inline-block;">View Project →</a>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-container" style="flex: 1 1 300px; max-width: 320px; background: #1a1a1a; padding: 20px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.4); transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; text-align: center; display: flex; flex-direction: column; justify-content: space-between;">
+            <img src="/Users/kausarali/Downloads/Project1/FutureWork/DD.png" alt="HIV Drug Discovery" style="width: 100%; border-radius: 12px; object-fit: cover; margin-bottom: 15px; transition: transform 0.3s;">
+            <div>
+                <h3 style="font-size: 1.3em; color: #f4a261; margin-bottom: 10px;">Federated HIV Drug Discovery</h3>
+                <p style="line-height: 1.6; margin-bottom: 10px;">
+                    Performing privacy-preserving HIV drug discovery across heterogeneous biomedical institutions using FedProx and advanced ANN techniques.
+                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 5px; justify-content: center; margin-bottom: 10px;">
+                    <span style="background: rgba(255,255,255,0.1); padding: 3px 8px; border-radius: 5px; font-size: 0.8em;">FedProx</span>
+                    <span style="background: rgba(255,255,255,0.1); padding: 3px 8px; border-radius: 5px; font-size: 0.8em;">HIV Drug Discovery</span>
+                    <span style="background: rgba(255,255,255,0.1); padding: 3px 8px; border-radius: 5px; font-size: 0.8em;">Privacy-Preserving</span>
+                </div>
+            </div>
+            <a href="#" style="color: #f20808; font-weight: 600; text-decoration: none; margin-top: 10px; display: inline-block;">View Project →</a>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-container" style="flex: 1 1 300px; max-width: 320px; background: #1a1a1a; padding: 20px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.4); transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; text-align: center; display: flex; flex-direction: column; justify-content: space-between;">
+            <img src="/Users/kausarali/Downloads/Project1/FutureWork/Loss.png" alt="Breast Cancer Detection" style="width: 100%; border-radius: 12px; object-fit: cover; margin-bottom: 15px; transition: transform 0.3s;">
+            <div>
+                <h3 style="font-size: 1.3em; color: #f4a261; margin-bottom: 10px;">New Loss Function</h3>
+                <p style="line-height: 1.6; margin-bottom: 10px;">
+                    Designing and developing a novel loss funtion for supervised machine learning. This loss function will be most robust and generalized.
+                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 5px; justify-content: center; margin-bottom: 10px;">
+                    <span style="background: rgba(255,255,255,0.1); padding: 3px 8px; border-radius: 5px; font-size: 0.8em;">Novel Loss Function</span>
+                    <span style="background: rgba(255,255,255,0.1); padding: 3px 8px; border-radius: 5px; font-size: 0.8em;">ML Models</span>
+                    <span style="background: rgba(255,255,255,0.1); padding: 3px 8px; border-radius: 5px; font-size: 0.8em;">Roboust, Generalized</span>
+                </div>
+            </div>
+            <a href="#" style="color: #f20808; font-weight: 600; text-decoration: none; margin-top: 10px; display: inline-block;">View Project →</a>
+        </div>
+
+    </div>
+</section>
+
+<!-- Hover Zoom Effect for Ongoing Work -->
+<style>
+    .project-container:hover {
+        transform: translateY(-10px) scale(1.05);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    }
+    .project-container:hover img {
+        transform: scale(1.05);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 1000px) {
+        .projects-row {
+            justify-content: center;
+        }
+    }
+    @media (max-width: 750px) {
+        .projects-row {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+</style>
+
+
+
+<!-- About Section -->
+<section class="about" id="about">
+    <div class="about-container">
+        <div class="about-image">
+            <img src="/Users/kausarali/Downloads/Project1/Mypic.png" alt="Kausar Ali Chaudhary">
+        </div>
+        <div class="about-text">
+            <small>Information</small>
+            <h2>About</h2>
+            <p>
+                Kausar Ali Chaudhary is a Ph.D. researcher and Visvesvaraya Fellow in the Department of Computer Science at Aligarh Muslim University. His research interests include Artificial Intelligence, Randomized Neural Networks (RdNNs), Artificial Neural Networks (ANNs), Fuzzy Systems, Machine Learning, Deep Learning, and Bioinformatics. His work focuses on developing novel neural architectures, loss functions, activation functions, and optimization strategies to enhance learning efficiency, scalability, robustness, and interpretability. He is particularly interested in integrating fuzzy intelligence with neural computing to address uncertainty in complex real-world problems. 
+                </p>
+            <p>    Kausar has published research in IEEE conferences and is actively pursuing high-impact contributions in leading journals, particularly IEEE Transactions on Fuzzy Systems. His long-term goal is to advance the theoretical foundations and practical applications of intelligent systems for healthcare, bioinformatics, and data-driven scientific discovery. 
+            </p>
+            <div class="about-stats">
+                <div><strong>00 $</strong><span>total projects completed</span></div>
+                <div><strong>00 $</strong><span>average project value</span></div>
+                <div><strong>00 years</strong><span>years of industry experience</span></div>
+                <div><strong>00 k</strong><span>successful client collaborations</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<section class="header" id="awards">
+    <h1>Awards & Honors</h1>
+    <p>Recognition received for academic excellence, research achievements, fellowships, and national-level competitive examinations.</p>
+</section>
+
+<section class="awards-container">
+
+    <div class="award-card">
+        <div class="award-content">
+            <div class="award-title">Travel Grant – 13th ACM IKDD CODS 2025</div>
+            <div class="award-desc">
+                Awarded a competitive travel grant to attend the 13th ACM IKDD CODS Conference held at IISER Pune, recognizing active participation in the research community.
+            </div>
+        </div>
+        <div class="award-year">2025</div>
+    </div>
+
+    <div class="award-card">
+        <div class="award-content">
+            <div class="award-title">Anveshan Setu Fellowship</div>
+            <div class="award-desc">
+                Selected for the prestigious Anveshan Setu Fellowship program organized by ACM India, supporting research networking and academic development.
+            </div>
+        </div>
+        <div class="award-year">2025</div>
+    </div>
+
+    <div class="award-card">
+        <div class="award-content">
+            <div class="award-title">Travel Grant – ACM India PhD Clinic, ARCS 2025</div>
+            <div class="award-desc">
+                Received a travel grant to attend the ACM India PhD Clinic at ARCS 2025, Coimbatore, aimed at fostering doctoral research excellence.
+            </div>
+        </div>
+        <div class="award-year">2025</div>
+    </div>
+
+    <div class="award-card">
+        <div class="award-content">
+            <div class="award-title">Visvesvaraya PhD Fellowship</div>
+            <div class="award-desc">
+                Awarded the prestigious Visvesvaraya Fellowship by the Government of India in recognition of research potential in Electronics and Information Technology.
+            </div>
+        </div>
+        <div class="award-year">2022</div>
+    </div>
+
+    <div class="award-card">
+        <div class="award-content">
+            <div class="award-title">Junior Research Fellowship (JRF)</div>
+            <div class="award-desc">
+                Qualified the Junior Research Fellowship (JRF) examination conducted by the National Testing Agency, demonstrating excellence in Computer Science research aptitude.
+            </div>
+        </div>
+        <div class="award-year">2021</div>
+    </div>
+
+    <div class="award-card">
+        <div class="award-content">
+            <div class="award-title">National Eligibility Test (NET)</div>
+            <div class="award-desc">
+                Successfully qualified the National Eligibility Test (NET) in Computer Science and Applications at the national level.
+            </div>
+        </div>
+        <div class="award-year">2021</div>
+    </div>
+
+    <div class="award-card">
+        <div class="award-content">
+            <div class="award-title">Graduate Aptitude Test in Engineering (GATE)</div>
+            <div class="award-desc">
+                Qualified the Graduate Aptitude Test in Engineering (GATE 2021) in Computer Science and Information Technology.
+            </div>
+        </div>
+        <div class="award-year">2021</div>
+    </div>
+
+</section>
+
+
+<!-- Contact Section -->
+<section class="contact" id="contact">
+  <div class="contact-container">
+    <div class="contact-card">
+      <div class="icon"><i class="fas fa-envelope"></i></div>
+      <h3>Email Us</h3>
+      <p>Feel free to reach out via email for inquiries.</p>
+      <a href="mailto:kausar.cs.amu@gmail.com">kausar.cs.amu@gmail.com</a>
+    </div>
+
+    <div class="contact-card">
+      <div class="icon"><i class="fas fa-phone"></i></div>
+      <h3>Call Us</h3>
+      <p>Our phone line is open during business hours.</p>
+      <a href="tel:+919897954518">+91-9897954518</a>
+    </div>
+
+    <div class="contact-card">
+      <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+      <h3>Visit Us</h3>
+      <p>Come visit our Lab @AMU,  Aligarh, India.</p>
+      <span>Aligarh, Uttar Pradesh, India</span>
+    </div>
+  </div>
+</section>
+
+<script>
+    const text = document.getElementById("expand-text");
+    const btn = document.getElementById("toggle-btn");
+
+    btn.addEventListener("click", function() {
+        text.classList.toggle("expanded");
+        btn.textContent = text.classList.contains("expanded") ? "Read Less" : "Read More";
+    });
+</script>
+<footer>
+    © 2026 Kausar Ali | Teaching Portfolio
+</footer>
+</body>
+</html>
